@@ -28,12 +28,13 @@
 				color: rgba(255,255,255,0.8);
 			}
 
-			/* ロゴの表示調整：mix-blend-mode で白背景を透過させます */
+			/* ロゴの表示調整 */
 			.logo-img {
 				width: 150px;
 				height: auto;
 				background: none;
-				mix-blend-mode: multiply; /* 白い背景を透明にしてロゴの金色だけを残す設定です */
+				/* 白背景を透過させる魔法の命令（金色のロゴに最適） */
+				mix-blend-mode: screen; 
 			}
 			
 			/* 代表写真の表示調整 */
@@ -50,7 +51,7 @@
 		<div id="wrapper">
 			<header id="header" class="alt">
 				<span class="logo" style="background: none;">
-					<img src="images/logo-gold.jpg" alt="松尾音楽事務所ロゴ" class="logo-img" />
+					<img src="images/logo-gold.png" alt="" class="logo-img" />
 				</span>
 				<h1>株式会社 松尾音楽事務所</h1>
 				<p>
@@ -83,7 +84,7 @@
 							</ul>
 						</div>
 						<span class="image">
-							<img src="images/daihyo-chika.jpg" alt="代表挨拶" class="representative-img" />
+							<img src="images/daihyo-chika.jpg" alt="" class="representative-img" />
 						</span>
 					</div>
 				</section>
