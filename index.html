@@ -16,13 +16,10 @@
 				font-family: 'Noto Sans JP', sans-serif !important;
 				letter-spacing: 0.05em;
 			}
-			
 			h1, h2, h3, .english-copy {
 				font-family: 'Montserrat', 'Noto Sans JP', sans-serif !important;
 			}
-
 			h1 { font-weight: 700; }
-			
 			.english-copy {
 				font-size: 0.65em;
 				font-weight: 600;
@@ -31,145 +28,102 @@
 				color: rgba(255,255,255,0.8);
 			}
 
-			/* ロゴの表示調整 */
+			/* ロゴの表示調整：mix-blend-mode で白背景を透過させます */
 			.logo-img {
 				width: 150px;
 				height: auto;
 				background: none;
+				mix-blend-mode: multiply; /* 白い背景を透明にしてロゴの金色だけを残す設定です */
 			}
 			
-			/* 代表写真のサイズ微調整 */
+			/* 代表写真の表示調整 */
 			.representative-img {
-				object-fit: cover;
+				width: 100%;
+				height: auto;
+				max-width: 400px;
 				border-radius: 4px;
-				max-height: 500px;
+				display: block;
 			}
 		</style>
 	</head>
 	<body class="is-preload">
-
 		<div id="wrapper">
+			<header id="header" class="alt">
+				<span class="logo" style="background: none;">
+					<img src="images/logo-gold.jpg" alt="松尾音楽事務所ロゴ" class="logo-img" />
+				</span>
+				<h1>株式会社 松尾音楽事務所</h1>
+				<p>
+					日常に、音楽の息吹を。
+					<span class="english-copy">Invigorating Daily Life with Music.</span>
+				</p>
+			</header>
 
-				<header id="header" class="alt">
-						<span class="logo" style="background: none;">
-							<img src="images/logo-gold.jpeg" alt="松尾音楽事務所ロゴ" class="logo-img" />
+			<nav id="nav">
+				<ul>
+					<li><a href="#intro" class="active">ご挨拶</a></li>
+					<li><a href="#first">プラン・料金</a></li>
+					<li><a href="#second">実績・動画</a></li>
+					<li><a href="#cta">奏者募集</a></li>
+				</ul>
+			</nav>
+
+			<div id="main">
+				<section id="intro" class="main">
+					<div class="spotlight">
+						<div class="content">
+							<header class="major">
+								<h2>Message</h2>
+							</header>
+							<p><strong>「日常に、音楽の息吹を。」</strong><br />
+							私たちは、目に見えないけれど心に深く響く「生の調べ」を大切にしています。録音技術がどれほど進歩しても、その場に流れる空気の震えや、奏者の息づかいが生む感動は、何にも代えがたいものです。<br />
+							特別な日だけでなく、いつもの景色がふっと彩り豊かになるような。そんな体温のあるアートを、皆様の日常にお届けすることをお約束いたします。</p>
+							<ul class="actions">
+								<li><a href="#" class="button">代表プロフィール</a></li>
+							</ul>
+						</div>
+						<span class="image">
+							<img src="images/daihyo-chika.jpg" alt="代表挨拶" class="representative-img" />
 						</span>
-						<h1>株式会社 松尾音楽事務所</h1>
-						<p>
-							日常に、音楽の息吹を。
-							<span class="english-copy">Invigorating Daily Life with Music.</span>
-						</p>
-					</header>
-
-				<nav id="nav">
-						<ul>
-							<li><a href="#intro" class="active">ご挨拶</a></li>
-							<li><a href="#first">プラン・料金</a></li>
-							<li><a href="#second">実績・動画</a></li>
-							<li><a href="#cta">奏者募集</a></li>
-						</ul>
-					</nav>
-
-				<div id="main">
-
-						<section id="intro" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>Message</h2>
-										</header>
-										<p><strong>「日常に、音楽の息吹を。」</strong><br />
-										私たちは、目に見えないけれど心に深く響く「生の調べ」を大切にしています。録音技術がどれほど進歩しても、その場に流れる空気の震えや、奏者の息づかいが生む感動は、何にも代えがたいものです。<br />
-										特別な日だけでなく、いつもの景色がふっと彩り豊かになるような。そんな体温のあるアートを、皆様の日常にお届けすることをお約束いたします。</p>
-										<ul class="actions">
-											<li><a href="#" class="button">代表プロフィール</a></li>
-										</ul>
-									</div>
-									<span class="image">
-										<img src="images/daihyo-chika.jpeg" alt="代表挨拶" class="representative-img" />
-									</span>
-								</div>
-							</section>
-
-						<section id="first" class="main special">
-								<header class="major">
-									<h2>Service & Price</h2>
-									<p>生演奏のご提案と、基本プランのご紹介。</p>
-								</header>
-								<ul class="features">
-									<li>
-										<span class="icon solid major style1 fa-music"></span>
-										<h3>スタンダードプラン</h3>
-										<p>もっとも親しまれている基本的な演奏形態のご提案です。</p>
-									</li>
-									<li>
-										<span class="icon major style3 fa-heart"></span>
-										<h3>オーダーメイド</h3>
-										<p>イベントの趣旨に合わせた、特別な編成でのアートをご提案します。</p>
-									</li>
-									<li>
-										<span class="icon major style5 fa-gem"></span>
-										<h3>Dolor nullam</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
-									</li>
-								</ul>
-							</section>
-
-						<section id="second" class="main special">
-								<header class="major">
-									<h2>Works & Movies</h2>
-									<p>これまでの実績と、演奏の様子を動画でご覧いただけます。</p>
-								</header>
-								<p class="content">ここでは、YouTube動画の埋め込みや、フォトギャラリーを配置するのに適しています。松尾様が「ダークな雰囲気」にしたいとおっしゃっていたエリアですね。後のステップで背景を黒くカスタマイズしましょう。</p>
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="#" class="button">動画一覧を見る</a></li>
-									</ul>
-								</footer>
-							</section>
-
-						<section id="cta" class="main special">
-								<header class="major">
-									<h2>Recruit</h2>
-									<p>共に「日常に息吹」を届ける演奏者を募集しています。</p>
-								</header>
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="#" class="button primary">募集要項</a></li>
-										<li><a href="#" class="button">お問い合わせ</a></li>
-									</ul>
-								</footer>
-							</section>
-
 					</div>
+				</section>
 
-				<footer id="footer">
-						<section>
-							<h2>Company</h2>
-							<p>株式会社 松尾音楽事務所</p>
-							<p>私たちの理念や、会社概要についての詳細です。</p>
-						</section>
-						<section>
-							<h2>Contact</h2>
-							<dl class="alt">
-								<dt>Address</dt>
-								<dd>〒000-0000 〇〇県〇〇市〇〇区 ...</dd>
-								<dt>Email</dt>
-								<dd><a href="#">info@matsuo-music.com</a></dd>
-							</dl>
-						</section>
-						<p class="copyright">&copy; Matsuo Music Office Inc. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
-
+				<section id="first" class="main special">
+					<header class="major">
+						<h2>Service & Price</h2>
+						<p>生演奏のご提案と、基本プランのご紹介。</p>
+					</header>
+					<ul class="features">
+						<li>
+							<span class="icon solid major style1 fa-music"></span>
+							<h3>スタンダードプラン</h3>
+							<p>もっとも親しまれている基本的な演奏形態のご提案です。</p>
+						</li>
+						<li>
+							<span class="icon major style3 fa-heart"></span>
+							<h3>オーダーメイド</h3>
+							<p>イベントの趣旨に合わせた、特別な編成でのアートをご提案します。</p>
+						</li>
+						<li>
+							<span class="icon major style5 fa-gem"></span>
+							<h3>プレミアム</h3>
+							<p>一流のアーティストによる、最上級の音楽体験をお届けします。</p>
+						</li>
+					</ul>
+				</section>
 			</div>
 
-		<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<footer id="footer">
+				<p class="copyright">&copy; Matsuo Music Office Inc. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+			</footer>
+		</div>
 
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 	</body>
 </html>
