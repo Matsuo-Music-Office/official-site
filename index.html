@@ -11,35 +11,49 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
 
-<style>
-    body, input, select, textarea, h1, h2, h3, h4, h5, h6 {
-        /* 日本語は Noto Sans JP を基本に */
-        font-family: 'Noto Sans JP', sans-serif !important;
-        letter-spacing: 0.05em;
-    }
-    
-    h1, h2, h3, .english-copy {
-        /* 見出しと英語コピーには Montserrat を適用 */
-        font-family: 'Montserrat', 'Noto Sans JP', sans-serif !important;
-    }
+		<style>
+			body, input, select, textarea, h1, h2, h3, h4, h5, h6 {
+				font-family: 'Noto Sans JP', sans-serif !important;
+				letter-spacing: 0.05em;
+			}
+			
+			h1, h2, h3, .english-copy {
+				font-family: 'Montserrat', 'Noto Sans JP', sans-serif !important;
+			}
 
-    h1 { font-weight: 700; } /* 会社名は力強く */
-    
-    .english-copy {
-        font-size: 0.65em;
-        font-weight: 600;
-        text-transform: uppercase; /* 小文字で打っても大文字で表示しておしゃれに */
-        letter-spacing: 0.2em;
-        color: rgba(255,255,255,0.8);
-    }
-</style>
+			h1 { font-weight: 700; }
+			
+			.english-copy {
+				font-size: 0.65em;
+				font-weight: 600;
+				text-transform: uppercase;
+				letter-spacing: 0.2em;
+				color: rgba(255,255,255,0.8);
+			}
+
+			/* ロゴの表示調整 */
+			.logo-img {
+				width: 150px;
+				height: auto;
+				background: none;
+			}
+			
+			/* 代表写真のサイズ微調整 */
+			.representative-img {
+				object-fit: cover;
+				border-radius: 4px;
+				max-height: 500px;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
 		<div id="wrapper">
 
 				<header id="header" class="alt">
-						<span class="logo"><img src="images/logo.svg" alt="" /></span>
+						<span class="logo" style="background: none;">
+							<img src="images/logo-gold.jpeg" alt="松尾音楽事務所ロゴ" class="logo-img" />
+						</span>
 						<h1>株式会社 松尾音楽事務所</h1>
 						<p>
 							日常に、音楽の息吹を。
@@ -64,12 +78,16 @@
 										<header class="major">
 											<h2>Message</h2>
 										</header>
-										<p>ここにご挨拶の文章を入力します。最初は隠しておきたいとのことでしたので、メニューの「ご挨拶」を押すとここにスクロールする仕組みです。まずは日本語で、松尾様の想いを綴ってみてください。</p>
+										<p><strong>「日常に、音楽の息吹を。」</strong><br />
+										私たちは、目に見えないけれど心に深く響く「生の調べ」を大切にしています。録音技術がどれほど進歩しても、その場に流れる空気の震えや、奏者の息づかいが生む感動は、何にも代えがたいものです。<br />
+										特別な日だけでなく、いつもの景色がふっと彩り豊かになるような。そんな体温のあるアートを、皆様の日常にお届けすることをお約束いたします。</p>
 										<ul class="actions">
-											<li><a href="#" class="button">詳しく見る</a></li>
+											<li><a href="#" class="button">代表プロフィール</a></li>
 										</ul>
 									</div>
-									<span class="image"><img src="images/pic01.jpg" alt="松尾音楽事務所のイメージ写真" /></span>
+									<span class="image">
+										<img src="images/daihyo-chika.jpeg" alt="代表挨拶" class="representative-img" />
+									</span>
 								</div>
 							</section>
 
@@ -91,8 +109,8 @@
 									</li>
 									<li>
 										<span class="icon major style5 fa-gem"></span>
-										<h3>プレミアム</h3>
-										<p>一流のアーティストによる、最上級の音楽体験をお届けします。</p>
+										<h3>Dolor nullam</h3>
+										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
 									</li>
 								</ul>
 							</section>
@@ -155,6 +173,3 @@
 
 	</body>
 </html>
-
-
-
