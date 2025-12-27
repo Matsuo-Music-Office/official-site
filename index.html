@@ -28,13 +28,13 @@
 				color: rgba(255,255,255,0.8);
 			}
 
-			/* ロゴの表示調整 */
+			/* ロゴの表示調整：透過済み画像なので blend-mode は不要になりました */
 			.logo-img {
-				width: 150px;
+				width: 180px; /* 少し大きめに調整しました */
 				height: auto;
 				background: none;
-				/* 白背景を透過させる魔法の命令（金色のロゴに最適） */
-				mix-blend-mode: screen; 
+				/* ゴールドを際立たせるために、少しだけ影をつけます */
+				filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
 			}
 			
 			/* 代表写真の表示調整 */
