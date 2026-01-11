@@ -19,6 +19,33 @@
 			h1, h2, h3, .english-copy {
 				font-family: 'Montserrat', 'Noto Sans JP', sans-serif !important;
 			}
+			/* --- 背景画像の設定を追加 --- */
+#banner {
+    position: relative;
+    background-image: url('images/bg-hall.JPG'); /* アップロードしたファイル名に合わせました */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+}
+
+/* 画像に薄い白を被せて文字を読みやすくする設定 */
+#banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4); /* 白の薄さを40%に調整 */
+    z-index: 1;
+}
+
+/* 中の文字を画像より前に出す */
+#banner .inner {
+    position: relative;
+    z-index: 2;
+}
 			h1 { font-weight: 700; }
 			.english-copy {
 				font-size: 0.65em;
@@ -128,5 +155,6 @@
 		<script src="assets/js/main.js"></script>
 	</body>
 </html>
+
 
 
