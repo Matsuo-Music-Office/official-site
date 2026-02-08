@@ -20,28 +20,41 @@
 				font-family: 'Montserrat', 'Noto Sans JP', sans-serif !important;
 			}
 
-			/* --- 【重要】ナビゲーションを上部に固定する設定 --- */
+			/* --- ナビゲーションを横並びで上部に固定する設定 --- */
 			#nav {
 				position: fixed !important;
 				top: 0 !important;
-				left: 0 !important;
 				width: 100% !important;
 				z-index: 1000 !important;
-				background: rgba(255, 255, 255, 0.95) !important; /* 少し透ける白 */
+				background: rgba(255, 255, 255, 0.95) !important;
 				box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+				text-align: center;
 			}
 
-			/* サイドバー設定を解除 */
-			#wrapper {
-				padding-left: 0 !important;
+			/* 横並びを強制する設定 */
+			#nav ul {
+				display: flex !important;
+				justify-content: center !important;
+				list-style: none !important;
+				margin: 0 !important;
+				padding: 0 !important;
+				flex-wrap: nowrap !important;
 			}
 
-			/* 固定ナビの高さ分、コンテンツが隠れないように調整 */
-			body {
-				padding-top: 0; 
+			#nav ul li {
+				display: inline-block !important;
+				margin: 0 !important;
+				padding: 0 !important;
 			}
 
-			/* --- 背景画像の設定 --- */
+			#nav ul li a {
+				display: block !important;
+				padding: 0.8em 1.5em !important;
+				font-size: 0.9em !important;
+				border: none !important;
+			}
+
+			/* 背景画像の設定 */
 			#header {
 				position: relative;
 				background-image: url('images/bg-hall.JPG') !important; 
@@ -49,7 +62,7 @@
 				background-position: center;
 				background-attachment: fixed;
 				color: #333;
-				padding: 12em 0 10em 0 !important; /* 上部固定メニューを考慮して余白を広めに */
+				padding: 12em 0 10em 0 !important;
 			}
 			#header::before {
 				content: "";
@@ -61,43 +74,16 @@
 			#header.alt { background-image: none !important; background-color: #fff; }
 			#header > * { position: relative; z-index: 2; }
 
-			/* --- Q&A アコーディオンの設定 --- */
-			.faq-item {
-				border-bottom: 1px solid #eee;
-				margin-bottom: 1em;
-				text-align: left;
-			}
-			.faq-item summary {
-				padding: 1em;
-				cursor: pointer;
-				list-style: none;
-				position: relative;
-				font-weight: bold;
-				outline: none;
-			}
+			/* Q&A アコーディオン */
+			.faq-item { border-bottom: 1px solid #eee; margin-bottom: 1em; text-align: left; }
+			.faq-item summary { padding: 1em; cursor: pointer; list-style: none; position: relative; font-weight: bold; outline: none; }
 			.faq-item summary::-webkit-details-marker { display: none; }
-			.faq-item summary::after {
-				content: '+';
-				position: absolute;
-				right: 1em;
-				font-size: 1.5em;
-			}
-			.faq-item[open] summary::after {
-				content: '−';
-			}
-			.faq-answer {
-				padding: 0 1em 1em 1em;
-				color: #666;
-			}
+			.faq-item summary::after { content: '+'; position: absolute; right: 1em; font-size: 1.5em; }
+			.faq-item[open] summary::after { content: '−'; }
+			.faq-answer { padding: 0 1em 1em 1em; color: #666; }
 
-			/* --- 会社概要テーブル --- */
-			.company-table {
-				width: 100%;
-				text-align: left;
-				margin-top: 2em;
-			}
+			.company-table { width: 100%; text-align: left; margin-top: 2em; }
 			.company-table th { width: 30%; font-weight: bold; }
-
 			.logo-img { width: 180px; filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3)); }
 		</style>
 	</head>
@@ -105,11 +91,11 @@
 		<div id="wrapper">
 			<nav id="nav">
 				<ul>
-					<li><a href="#header" class="active">ホーム</a></li>
+					<li><a href="#header">ホーム</a></li>
 					<li><a href="#intro">ご挨拶</a></li>
 					<li><a href="#price">料金プラン</a></li>
 					<li><a href="#second">実績</a></li>
-					<li><a href="#faq">お問い合わせ（FAQ）</a></li>
+					<li><a href="#faq">FAQ</a></li>
 					<li><a href="#company">会社概要</a></li>
 				</ul>
 			</nav>
@@ -137,49 +123,48 @@
 				</section>
 
 				<section id="price" class="main">
-					<header class="major">
-						<h2>Plan & Price</h2>
-						<p>空間の趣旨に合わせた、上質な調べをご提案いたします。</p>
-					</header>
-
+					<header class="major"><h2>Plan & Price</h2></header>
 					<h3>イベント・パーティー演奏プラン</h3>
 					<div class="table-wrapper">
 						<table>
-							<thead>
-								<tr><th>編成</th><th>料金（基本演奏30分）</th><th>備考</th></tr>
-							</thead>
+							<thead><tr><th>編成</th><th>料金（30分）</th><th>備考</th></tr></thead>
 							<tbody>
 								<tr><td>ソロ（1名）</td><td>44,000円〜</td><td>ピアノ、バイオリン等</td></tr>
 								<tr><td>デュオ（2名）</td><td>88,000円〜</td><td>二重奏（弦楽器・ピアノ等）</td></tr>
 							</tbody>
-							<tfoot>
-								<tr><td colspan="3">※出張交通費・機材費別。リクエスト応相談。</td></tr>
-							</tfoot>
 						</table>
 					</div>
+					</section>
+				
+				<section id="second" class="main special">
+					<header class="major"><h2>Works</h2></header>
+					<p>これまでの実績をここに掲載予定です。</p>
+				</section>
 
-					<h3>学校・病院・福祉施設向けプラン</h3>
-					<div class="table-wrapper">
-						<table>
-							<thead>
-								<tr><th>プログラム</th><th>時間</th><th>料金</th><th>編成</th></tr>
-							</thead>
-							<tbody>
-								<tr><td>オペラ・ハイライト</td><td>60〜70分</td><td>88,000円</td><td>演奏者3名＋司会1名</td></tr>
-								<tr><td>こども向け作品</td><td>60分</td><td>55,000円</td><td>演奏者3名</td></tr>
-								<tr><td>病院・施設 慰問演奏</td><td>計60分</td><td>44,000円</td><td>演奏者2名</td></tr>
-							</tbody>
-						</table>
-					</div>
+				<section id="faq" class="main">
+					<header class="major"><h2>Q&A</h2></header>
+					<details class="faq-item">
+						<summary>ピアノなどの楽器がない場所でも演奏は可能ですか？</summary>
+						<div class="faq-answer">はい、可能です。</div>
+					</details>
+				</section>
 
-					<h3>プレミアム・アンサンブルプラン</h3>
-					<div class="table-wrapper">
-						<table>
-							<thead>
-								<tr><th>プラン名</th><th>料金（60分）</th><th>特徴</th></tr>
-							</thead>
-							<tbody>
-								<tr><td>タンゴ・バンド</td><td>165,000円〜</td><td>演奏者4名。タンゴ名曲選。</td></tr>
-								<tr><td>プレミアム・トリオ</td><td>136,000円〜</td><td>演奏者3名。オールジャンル対応。</td></tr>
-								<tr><td>クラシック・アンサンブル</td><td>200,000円〜</td><td>演奏者4名〜。本格的な響き。</td></tr>
-								<tr><td>オーケストラ・プラン</td><td>500
+				<section id="company" class="main">
+					<header class="major"><h2>Company</h2></header>
+					<table class="company-table">
+						<tr><th>会社名</th><td>株式会社松尾音楽事務所</td></tr>
+						<tr><th>所在地</th><td>兵庫県神戸市中央区磯上通８丁目１番２９号カサベラビルＣ＆Ｍ４０３号室</td></tr>
+					</table>
+				</section>
+			</div>
+			<footer id="footer"><p class="copyright">&copy; Matsuo Music Office Inc.</p></footer>
+		</div>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
